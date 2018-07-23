@@ -10,8 +10,8 @@ const Menu = () => (
   <div className='menu'>
     <Link to="/setup/"><FaCog /></Link>
     <Link to="/coffee-list/"><FaTh /></Link>
-    <FaTachometer />
-    <FaCoffee />
+    <Link to="/"><FaTachometer /></Link>
+    <Link to="/"><FaCoffee /></Link>
   </div>
 )
 
