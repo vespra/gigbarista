@@ -1,3 +1,11 @@
+.coffee-display {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  width: 100%;
+  justify-content: center;
+}
+
 .single-coffee-container {
    padding: 20px;
    margin-bottom: 20px;
@@ -9,8 +17,8 @@
    .coffee-box {
      border: 1px solid rgba(255,255,255, 0.1);
      padding: 20px;
-     max-height: 300px;
-     width: 300px;
+     max-height: 150px;
+     width: 150px;
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -31,13 +39,14 @@
      }
 
      img {
-       width: 75%;
+       width: 80px;
+       height: 60px;
      }
 
      .coffee-title {
        font-family: 'Lobster';
        color: #fff;
-       font-size: 3rem;
+       font-size: 2rem;
        margin: 10px;
        letter-spacing: 1px;
      }
@@ -60,8 +69,9 @@
 
      &.small {
        margin-top: 20px;
-       border-radius: 50%;
-       width: 45px;
+       border-radius: 50px;
+       width: 75px;
+       height: 20px;
      }
    }
 }

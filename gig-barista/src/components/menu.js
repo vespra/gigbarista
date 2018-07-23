@@ -9,7 +9,7 @@ var FaCoffee = require('react-icons/lib/fa/coffee');
 const Menu = () => (
   <div className='menu'>
     <Link to="/setup/"><FaCog /></Link>
-    <FaTh />
+    <Link to="/coffee-list/"><FaTh /></Link>
     <FaTachometer />
     <FaCoffee />
   </div>
