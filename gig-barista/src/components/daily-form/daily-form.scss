@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Lobster|Open+Sans');
+
+.daily-form-container {
+  width: 80%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  margin: 50px 100px;
+  padding: 50px;
+  text-align: center;
+  font-family: 'Open Sans';
+  line-height: 3rem;
+
+  h2 {
+    font-family: 'Lobster';
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  p {
+    color: #fff;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 20px 0;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      text-align: left;
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+
+      input {
+        line-height: 2rem;
+        background: #fff;
+        line-height: 3rem;
+        background: #2c1908;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        padding-left: 20px;
+
+        &:focus {
+          outline-color: #f3a35b;
+        }
+      }
+    }
+
+    input[type="submit"] {
+      background: #f3a35b;
+      padding: 15px 45px;
+      border: none;
+      border-radius: 10px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-top: 10px;
+      //border: 2px solid #2c1908;
+    }
+  }
+}
