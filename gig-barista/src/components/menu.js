@@ -1,0 +1,18 @@
+import React from 'react'
+import Link from 'gatsby-link'
+
+var FaCog = require('react-icons/lib/fa/cog');
+var FaTh = require('react-icons/lib/fa/th');
+var FaTachometer = require('react-icons/lib/fa/dashboard');
+var FaCoffee = require('react-icons/lib/fa/coffee');
+
+const Menu = () => (
+  <div className='menu'>
+    <Link to="/setup/"><FaCog /></Link>
+    <FaTh />
+    <FaTachometer />
+    <FaCoffee />
+  </div>
+)
+
+export default Menu

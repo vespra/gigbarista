@@ -1,0 +1,41 @@
+.inner {
+  background-image: radial-gradient(ellipse at center, #713f16 1%, #351e0a 50%, black 100%);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .main-container {
+    flex-grow: 11;
+    display: flex;
+    flex-direction: column;
+     > div {
+       display: flex;
+       flex-grow: 1;
+     }
+  }
+
+  .menu {
+    flex-grow: 1;
+    height: 60px;
+    max-height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+
+    svg {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.3rem;
+      margin: 20px 1rem;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
