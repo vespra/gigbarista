@@ -1,20 +1,19 @@
 import React from 'react';
-import {createStore} from 'redux';
+import {createStore, combineReducers} from 'redux';
 
 import allReducers from './reducers';
 
-const store = createStore(allReducers);
+import defaultSetup from '../data/default-setup';
+import coffeeTypes from '../data/coffee-types';
+
+// create an object for the default data
+const defaultState = {
+  config: defaultSetup,
+  coffees: coffeeTypes
+}
 
 export default function configureStore() {
-  const store = createStore(allReducers);
-
-  /*if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./reducer.js', () => {
-	  const nextReducer = require('./reducer.js');
-	  store.replaceReducer(nextReducer);
-	});
-}*/
+  const store = createStore(allReducers, defaultState);
 
   return store;
 }
