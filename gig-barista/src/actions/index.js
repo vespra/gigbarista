@@ -8,11 +8,13 @@ export const selectCoffee = (coffee) => {
 
 
 // update daily form
-export const updateDailyForm = (dailyForm) => {
-  console.log("You have submitted the daily form: " + dailyForm );
+export const updateDailyForm = (coffeeLocation, coffeeStation, coffeeType, coffeeAmount) => {
   return {
     type: "UPDATE_DAILY_FORM",
-    dailyForm
+    coffeeLocation,
+    coffeeStation,
+    coffeeType,
+    coffeeAmount
   }
 };
 

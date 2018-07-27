@@ -2,19 +2,24 @@ import React from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { updateDailyInfo } from '../../actions/index';
+import { updateDailyForm } from '../../actions/index';
 import styles from "./daily-form.scss";
 
 const DailyForm = class extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      'coffeeType': this.props.config.coffee_bean_type,
+      'coffeeAmount': this.props.config.coffee_amount
+    };
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.value;
+  handleInputChange(e) {
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
@@ -22,10 +27,14 @@ const DailyForm = class extends React.Component {
     });
   }
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    console.log(this.state);
-    event.preventDefault();
+  handleSubmit(e) {
+    e.preventDefault();
+    const coffeeLocation = this.props.config.coffee_station_location;
+    const coffeeStation = this.props.config.coffee_station;
+    const coffeeType = this.refs.coffeeType.value;
+    const coffeeAmount = this.refs.coffeeAmount.value;
+
+    this.props.updateDailyForm(coffeeLocation, coffeeStation, coffeeType, coffeeAmount);
   }
 
   render() {
@@ -33,22 +42,22 @@ const DailyForm = class extends React.Component {
       <div className="daily-form-container">
         <h2>Good Morning</h2>
         <p>Time to set up the daily coffee</p>
-        <form onSubmit={this.handleSubmit}>
+        <form ref="dailyConfigForm" onSubmit={this.handleSubmit}>
           <label>
             Coffee Location
-            <input type="text" name="coffeeLocation" value={this.props.default.coffee_station_location} onChange={this.handleInputChange} readOnly />
+            <input type="text" ref="coffeeLocation" value={this.props.config.coffee_station_location} readOnly />
           </label>
           <label>
             Coffee Station
-            <input type="text" name="coffeeStation" value={this.props.default.coffee_station} onChange={this.handleInputChange} readOnly/>
+            <input type="text" ref="coffeeStation" value={this.props.config.coffee_station} readOnly/>
           </label>
           <label>
             Coffee Bean Type
-            <input type="text" name="coffeeType" value={this.props.default.coffee_bean_type} onChange={this.handleInputChange} />
+            <input type="text" ref="coffeeType" name="coffeeType" value={this.state.coffeeType} onChange={this.handleInputChange}/>
           </label>
           <label>
             Coffee Amount in grams
-            <input type="number" name="coffeeAmount" value={this.props.default.coffee_amount} onChange={this.handleInputChange} />
+            <input type="number" ref="coffeeAmount" name="coffeeAmount" value={this.state.coffeeAmount} onChange={this.handleInputChange}/>
           </label>
 
           <input type="submit" value="Submit" className="submit-btn"/>
@@ -60,12 +69,12 @@ const DailyForm = class extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    default: state.default[0]
+    config: state.config
   };
 }
 
 const matchDispatchToProps = dispatch => {
-  return bindActionCreators({updateDailyInfo: updateDailyInfo}, dispatch)
+  return bindActionCreators({updateDailyForm: updateDailyForm}, dispatch)
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(DailyForm);

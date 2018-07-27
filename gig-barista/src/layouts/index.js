@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { bindActionCreators } from "redux";
+/*import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import * as actionCreators from "../actions/index";
+import * as actionCreators from "../actions/index";*/
 
 import Menu from '../components/menu';
 
 import './index.css'
 import styles from "./layout.scss";
 
-function mapStateToProps(state) {
+/*function mapStateToProps(state) {
   return {
     config: state.config,
     coffees: state.coffees
@@ -19,7 +19,7 @@ function mapStateToProps(state) {
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators(actionCreators, dispatch);
-}
+}*/
 
 const Layout = ({ children, data }) => (
   <div>
@@ -36,4 +36,5 @@ Layout.propTypes = {
   children: PropTypes.func,
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(Layout);
+//export default connect(mapStateToProps, matchDispatchToProps)(Layout);
+export default Layout;
