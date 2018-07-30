@@ -6,20 +6,10 @@ import allReducers from './reducers';
 import defaultSetup from '../data/default-setup';
 import coffeeTypes from '../data/coffee-types';
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
+//https://plainjs.com/javascript/utilities/set-cookie-get-cookie-and-delete-cookie-5/
+function getCookie(name) {
+    var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
 }
 
 // create an object for the default data

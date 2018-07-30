@@ -21,10 +21,10 @@ export const updateDailyForm = (coffeeLocation, coffeeStation, coffeeType, coffe
 // update single coffee
 export const updateCoffee = (coffee) => {
   console.log("You have updated coffee: " + coffee);
+  console.log(coffee);
   return {
     type: "UPDATE_COFFEE",
-    milkType,
-    ice
+    coffee
   }
 };
 

@@ -3,6 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { addCoffee } from '../../actions/index';
+import { updateCoffee } from '../../actions/index';
+
 import CoffeeSingle from '../coffee-single/coffee-single';
 import styles from './coffee-list.scss';
 
@@ -29,6 +31,6 @@ const mapStateToProps = state => {
 }
 
 const matchDispatchToProps = dispatch => {
-  return bindActionCreators({addCoffee: addCoffee}, dispatch)
+  return bindActionCreators({addCoffee: addCoffee, updateCoffee: updateCoffee}, dispatch)
 }
 export default connect(mapStateToProps, matchDispatchToProps)(CoffeeList);

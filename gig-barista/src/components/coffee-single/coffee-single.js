@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'gatsby-link'
 
 import styles from './coffee-single.scss';
 
@@ -11,7 +12,15 @@ const CoffeeSingle = class extends React.Component {
          <img src={coffee.imageUrl} />
          <p className="coffee-title">{coffee.name}</p>
        </div>
-       <div className="customize-btn small">+</div>
+
+       {coffee.can_have_milk || coffee.can_have_ice ?
+         (
+           <Link to="/single-coffee/" onClick={() => this.props.updateCoffee(coffee)} className="customize-btn small">+</Link>
+         ) : (
+           <div className="customize-btn small not-active">+</div>
+         )
+       }
+
      </div>
     )
   }

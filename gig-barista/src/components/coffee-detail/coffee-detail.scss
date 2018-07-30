@@ -1,0 +1,103 @@
+.coffee-form-container {
+  margin-top: 60px;
+  width: 80%;
+  //background: rgba(0,0,0,0.1);
+  border-radius: 20px;
+  text-align: center;
+  font-family: 'Open Sans';
+  line-height: 3rem;
+  display: flex;
+  align-items: center;
+
+  > div {
+    flex-grow: 1;
+    padding: 20px;
+    width: 50%;
+  }
+
+  .left-side-container {
+    img {
+      margin-top: 50px;
+      width: 100%;
+    }
+    //border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .right-side-container {
+    //border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  h2 {
+    font-family: 'Lobster';
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: 1px 1px 10px #000;
+  }
+
+  p {
+    color: #fff;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 20px 0;
+
+    label {
+      display: flex;
+      width: 100%;
+      text-align: left;
+      line-height: 3rem;
+      margin-bottom: 1rem;
+
+      .icon {
+        vertical-align: middle;
+        background: rgba(255,255,255,0.1);
+        //background: rgba(44, 25, 8, 0.1);
+        width: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-right: none;
+        line-height: 2.8rem;
+
+        svg {
+          margin-bottom: 4px;
+        }
+      }
+
+      input, select {
+        line-height: 3rem;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(44, 25, 8, 0.1);
+        color: #fff;
+        padding-left: 20px;
+        width: calc(100% - 50px);
+        &:focus {
+          outline: none;
+          border-top: 1px solid #c58f63;
+          border-bottom: 1px solid #c58f63;
+          border-right: 1px solid #c58f63;
+        }
+        &.readonly {
+          background: rgba(44, 25, 8, 0.5);
+        }
+      }
+    }
+
+    input[type="submit"] {
+      background: rgba(1, 208, 202, 0.7);;
+      padding: 15px 45px;
+      border: 1px solid rgba(255,255,255,0.1);
+      //border-radius: 10px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-top: 10px;
+      //border: 2px solid #2c1908;
+    }
+  }
+}
