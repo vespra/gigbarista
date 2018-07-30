@@ -5,6 +5,15 @@ import { connect } from 'react-redux';
 import { updateDailyForm } from '../../actions/index';
 import styles from "./daily-form.scss";
 
+var FaMapMarker = require('react-icons/lib/fa/map-marker');
+var FaStore = require('../../assets/icons/store');
+var FaCoffeeBean = require('../../assets/icons/coffee-bean');
+var FaWeight = require('../../assets/icons/weight');
+
+/*
+map-marker-alt
+*/
+
 const DailyForm = class extends React.Component {
   constructor(props) {
     super(props);
@@ -33,35 +42,38 @@ const DailyForm = class extends React.Component {
     const coffeeStation = this.props.config.coffee_station;
     const coffeeType = this.refs.coffeeType.value;
     const coffeeAmount = this.refs.coffeeAmount.value;
-
     this.props.updateDailyForm(coffeeLocation, coffeeStation, coffeeType, coffeeAmount);
   }
 
   render() {
     return (
       <div className="daily-form-container">
-        <h2>Good Morning</h2>
-        <p>Time to set up the daily coffee</p>
-        <form ref="dailyConfigForm" onSubmit={this.handleSubmit}>
-          <label>
-            Coffee Location
-            <input type="text" ref="coffeeLocation" value={this.props.config.coffee_station_location} readOnly />
-          </label>
-          <label>
-            Coffee Station
-            <input type="text" ref="coffeeStation" value={this.props.config.coffee_station} readOnly/>
-          </label>
-          <label>
-            Coffee Bean Type
-            <input type="text" ref="coffeeType" name="coffeeType" value={this.state.coffeeType} onChange={this.handleInputChange}/>
-          </label>
-          <label>
-            Coffee Amount in grams
-            <input type="number" ref="coffeeAmount" name="coffeeAmount" value={this.state.coffeeAmount} onChange={this.handleInputChange}/>
-          </label>
+        <div className="left-side-container">
+          <h2>Good Morning</h2>
+          <p>Time to set up the daily coffee</p>
+        </div>
+        <div className="right-side-container">
+          <form ref="dailyConfigForm" onSubmit={this.handleSubmit}>
+            <label>
+              <div className="icon"><FaMapMarker /></div>
+              <input type="text" ref="coffeeLocation" value={this.props.config.coffee_station_location} readOnly />
+            </label>
+            <label>
+              <div className="icon"><FaStore /></div>
+              <input type="text" ref="coffeeStation" value={this.props.config.coffee_station} readOnly/>
+            </label>
+            <label>
+              <div className="icon"><FaCoffeeBean /></div>
+              <input type="text" ref="coffeeType" name="coffeeType" value={this.state.coffeeType} onChange={this.handleInputChange}/>
+            </label>
+            <label>
+              <div className="icon"><FaWeight /></div>
+              <input type="number" ref="coffeeAmount" name="coffeeAmount" value={this.state.coffeeAmount} onChange={this.handleInputChange}/>
+            </label>
 
-          <input type="submit" value="Submit" className="submit-btn"/>
-        </form>
+            <input type="submit" value="Submit" className="submit-btn"/>
+          </form>
+        </div>
       </div>
     );
   }

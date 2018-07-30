@@ -25,6 +25,7 @@ const Layout = ({ children, data }) => (
   <div>
     <div className='inner'>
     <div className='main-container'>
+      <div className='background-image'></div>
       {children()}
     </div>
     <Menu />

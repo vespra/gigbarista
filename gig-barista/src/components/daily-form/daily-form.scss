@@ -1,19 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One|Lobster|Open+Sans');
 
 .daily-form-container {
+  margin-top: 60px;
   width: 80%;
-  background: rgba(255,255,255,0.1);
+  //background: rgba(0,0,0,0.1);
   border-radius: 20px;
-  margin: 50px 100px;
-  padding: 50px;
   text-align: center;
   font-family: 'Open Sans';
   line-height: 3rem;
+  display: flex;
+  align-items: center;
+
+  > div {
+    flex-grow: 1;
+    padding: 20px;
+  }
+
+  .right-side-container {
+    //border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
   h2 {
     font-family: 'Lobster';
     color: #fff;
     font-size: 2rem;
+    text-shadow: 1px 1px 10px #000;
   }
 
   p {
@@ -31,33 +42,44 @@
 
     label {
       display: flex;
-      flex-direction: column;
-      width: 50%;
+      width: 100%;
       text-align: left;
-      line-height: 1.5rem;
+      line-height: 3rem;
       margin-bottom: 1rem;
 
+      .icon {
+        vertical-align: middle;
+        background: rgba(255,255,255,0.1);
+        //background: rgba(44, 25, 8, 0.1);
+        width: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-right: none;
+        line-height: 2.8rem;
+      }
+
       input {
-        line-height: 2rem;
-        background: #fff;
         line-height: 3rem;
-        background: #2c1908;
-        border: none;
-        border-radius: 5px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(44, 25, 8, 0.1);
         color: #fff;
         padding-left: 20px;
-
+        width: calc(100% - 50px);
         &:focus {
-          outline-color: #f3a35b;
+          outline: none;
+          border-top: 1px solid #c58f63;
+          border-bottom: 1px solid #c58f63;
+          border-right: 1px solid #c58f63;
         }
       }
     }
 
     input[type="submit"] {
-      background: #f3a35b;
+      background: rgba(1, 208, 202, 0.7);;
       padding: 15px 45px;
-      border: none;
-      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      //border-radius: 10px;
       text-transform: uppercase;
       color: #fff;
       margin-top: 10px;
