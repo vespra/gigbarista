@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link'
 
 import styles from './coffee-single.scss';
+var FaArrow = require('react-icons/lib/fa/chevron-right');
 
 const CoffeeSingle = class extends React.Component {
   render() {
@@ -15,9 +16,15 @@ const CoffeeSingle = class extends React.Component {
 
        {coffee.can_have_milk || coffee.can_have_ice ?
          (
-           <Link to="/single-coffee/" onClick={() => this.props.updateCoffee(coffee)} className="customize-btn small">+</Link>
+           <Link to="/single-coffee/" onClick={() => this.props.updateCoffee(coffee)} className="customize-btn small">
+            Custom
+            <FaArrow />
+           </Link>
          ) : (
-           <div className="customize-btn small not-active">+</div>
+           <div className="customize-btn small not-active">
+             Custom
+             <FaArrow />
+           </div>
          )
        }
 

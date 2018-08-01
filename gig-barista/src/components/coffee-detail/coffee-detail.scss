@@ -87,6 +87,17 @@
           background: rgba(44, 25, 8, 0.5);
         }
       }
+
+      select  {
+        option {
+          padding: 0 4px;
+          background: #3e2b1a;
+        }
+
+        &::-ms-expand { display: none; }
+
+        &:disabled::-ms-expand { background: #f60; }
+      }
     }
 
     input[type="submit"] {
