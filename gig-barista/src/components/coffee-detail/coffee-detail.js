@@ -85,7 +85,9 @@ const CoffeeDetail = class extends React.Component {
                 </select>
               </label>
             }
-            <hr />
+            <label>
+              <hr />
+            </label>
             <label>
               <div className="icon"><FaCoffeeBean /></div>
               <input type="text" ref="coffeeType" name="coffeeType" value={this.props.config.coffee_bean_type} className="readonly" readOnly />

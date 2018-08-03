@@ -10,10 +10,9 @@ const CoffeeSingle = class extends React.Component {
     return (
       <div key={coffee.id} className="single-coffee-container">
        <div className="coffee-box" onClick={() => this.props.addCoffee(coffee)}>
-         <img src={coffee.imageUrl} />
          <p className="coffee-title">{coffee.name}</p>
+         <img src={coffee.imageUrl} />
        </div>
-
        {coffee.can_have_milk || coffee.can_have_ice ?
          (
            <Link to="/single-coffee/" onClick={() => this.props.updateCoffee(coffee)} className="customize-btn small">
